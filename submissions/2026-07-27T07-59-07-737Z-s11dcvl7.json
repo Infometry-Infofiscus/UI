@@ -1,0 +1,18 @@
+{
+  "id": "s11dcvl7",
+  "filename": "2026-07-27T07-59-07-737Z-s11dcvl7.json",
+  "createdAt": "2026-07-27T07:59:07.737Z",
+  "status": "pending",
+  "author": {
+    "login": "Infometry-user",
+    "name": "Infometry-user",
+    "avatar_url": "https://avatars.githubusercontent.com/u/248819801?v=4"
+  },
+  "domain": "Medical",
+  "businessQuestion": "What is our total revenue leakage and reimbursement performance over the last 3 years?",
+  "sqlAnswer": "SELECT\n    SUM(revenue_leakage_amount) AS total_revenue_leakage,\n    SUM(reimbursement_amount) AS total_reimbursement,\n    ROUND(\n        (SUM(reimbursement_amount) / SUM(revenue_leakage_amount)) * 100,\n        2\n    ) AS reimbursement_performance_percentage\nFROM claims\nWHERE claim_date >= CURRENT_DATE - INTERVAL '3 years';",
+  "metrics": [],
+  "chainOfThought": [],
+  "schemaFact": [],
+  "schemaDimension": []
+}
